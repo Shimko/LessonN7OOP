@@ -1,16 +1,21 @@
 package OOPLessonN3;
 
 public class Plate {
-    public static int food;
+    private static int food;
 
     public Plate(int food) {
-        if (food >=0){
         this.food = food;
-        }
 
     }
     public void infoFood(){
         System.out.println("Plate: "+ food);
     }
 
+    public static int getFood() {
+        return food;
+    }
+
+    public static void setFood(int food) {
+        Plate.food = food;
+    }
 }

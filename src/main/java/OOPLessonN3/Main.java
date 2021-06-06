@@ -19,26 +19,26 @@ public class Main {
 
     public static void catEat(Cat [] catArray) {
         for (int i = 0; i < catArray.length; i++) {
-            if( Plate.food >= catArray[i].appetite) {
-                catArray[i].hunger = true;
-                System.out.println( " Koт " + catArray[i].name + " сегодня не останется голодным ");
-                if (Plate.food - catArray[i].appetite >= 0) {
-                    Plate.food -= catArray[i].appetite;
-                    System.out.println(" Koт " + catArray[i].name + " съел из тарелки " + catArray[i].appetite + " единиц еды");
+            if( Plate.getFood() >= catArray[i].getAppetite()) {
+                catArray[i].setHunger(true);
+                System.out.println( " Koт " + catArray[i].getName() + " сегодня не останется голодным ");
+                if (Plate.getFood() - catArray[i].getAppetite() >= 0) {
+                    Plate.setFood(- catArray[i].getAppetite());
+                    System.out.println(" Koт " + catArray[i].getName() + " съел из тарелки " + catArray[i].getAppetite() + " единиц еды");
                     int b = random.nextInt(30); ;
                     addFood(b);
-                    System.out.println(" В тарелке осталось " + Plate.food + " единиц еды");
+                    System.out.println(" В тарелке осталось " + Plate.getFood() + " единиц еды");
                 }
 
             }
             else {
-                System.out.println("Похоже кот " + catArray[i].name + " сегодня останется голодным");
+                System.out.println("Похоже кот " + catArray[i].getName() + " сегодня останется голодным");
             }
         }
     }
 
     public static void addFood(int n) {
-        Plate.food +=n;
+        Plate.setFood(+n);
         System.out.println(" Хозяин добавил в тарелку "+ n + " единиц еды");
     }
 }
