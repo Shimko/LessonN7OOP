@@ -4,8 +4,6 @@ import java.util.Random;
 
 public class Main {
     public  static Random random = new Random();
-
-
     public static void main(String[] args) {
         Cat [] catArray = {new Cat("Tom",random.nextInt(50), false),
                 new Cat("Леопольд",random.nextInt(50), false),
@@ -16,7 +14,6 @@ public class Main {
         catEat(catArray);
         plate.infoFood();
     }
-
     public static void catEat(Cat [] catArray) {
         for (int i = 0; i < catArray.length; i++) {
             if( Plate.getFood() >= catArray[i].getAppetite()) {
@@ -29,14 +26,12 @@ public class Main {
                     addFood(b);
                     System.out.println(" В тарелке осталось " + Plate.getFood() + " единиц еды");
                 }
-
             }
             else {
                 System.out.println("Похоже кот " + catArray[i].getName() + " сегодня останется голодным");
             }
         }
     }
-
     public static void addFood(int n) {
         Plate.setFood(+n);
         System.out.println(" Хозяин добавил в тарелку "+ n + " единиц еды");
