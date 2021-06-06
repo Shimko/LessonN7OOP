@@ -28,6 +28,7 @@ public class Main {
                 }
             }
             else {
+                catArray[i].setHunger(false);
                 System.out.println("Похоже кот " + catArray[i].getName() + " сегодня останется голодным");
             }
         }
